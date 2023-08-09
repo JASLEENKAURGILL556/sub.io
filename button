@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .container {
+    width: 400px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .oval-container {
+    background-color: blue;
+    border-radius: 25px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+  }
+
+  .oval-button {
+    width: 150px;
+    height: 60px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 60px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    color: white;
+    background-color: blue;
+  }
+
+  .oval-button.active {
+    background-color: white;
+    color: blue;
+  }
+</style>
+<title>Oval Buttons</title>
+</head>
+<body>
+  <div class="container">
+    <h2>Button Selection</h2>
+    <div class="oval-container">
+      <div class="oval-button active">Button 1</div>
+      <div class="oval-button">Button 2</div>
+    </div>
+  </div>
+  <script>
+    const ovalButtons = document.querySelectorAll('.oval-button');
+
+    ovalButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        ovalButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
