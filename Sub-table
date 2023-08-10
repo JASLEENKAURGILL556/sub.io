@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-  body {
+  /* ... (your existing styles) ... */
+   body {
     margin: 0;
     padding: 0;
     background-color: blue;
@@ -12,6 +13,8 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    font-style:Sans-serif;
+    font-weight:bold;
   }
 
   .container {
@@ -25,6 +28,10 @@
     flex-direction: row;
   }
 
+  .button-style{
+    background-color:blue;
+    
+}
   .button-container {
     flex: 1;
     display: flex;
@@ -40,8 +47,12 @@
     border-radius: 5px;
     cursor: pointer;
     margin-bottom: 10px;
-    width: 100%;
+    width: 50%;
   }
+  .oval-button:active{
+    background-color:white;
+    color:blue;
+}
 
   .table-container {
     flex: 3;
@@ -57,52 +68,180 @@
   th, td {
     padding: 20px;
     border-bottom: 1px solid #ddd;
-    text-align: left;
+    text-align: centre;
+    font-weigth:50px;
+    
   }
 
   th {
-    background-color: #f2f2f2;
+    background-color: #588BAE;
+    color:white;
   }
 
   th:not(:first-child),
   td:not(:first-child) {
-    border-left: 1px solid white;
+    border-left: 20px solid white;
   }
+  #mobile-column{
+    background-color:#0F52BA;
+   
+  }
+  #border-exception{
+    border:none;
+}
+  .features{
+    text-align:left;
+    color:grey;
+  }
+  .row{
+    color:grey;
+}
+  .mobile-row{
+    color:#0F52BA;
+}
+  .table-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+  }
+
+  .long-button {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px 100px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight:bold;
+  }
+  .oval-container {
+    background-color: blue;
+    border-radius: 50px;
+    padding: 9px;
+    padding-bottom:5px;
+    display: flex;
+    width:200px;
+   
+    transition: background-color 0.3s;
+  }
+
+  .oval-button {
+    width: 120px;
+    height: 15px;
+    border-radius: 70px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    padding:10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    color: white;
+    background-color: blue;
+  }
+
+  .oval-button.active {
+    background-color: white;
+    color: blue;
+  }
+ 
 </style>
 <title>Button and Table</title>
 </head>
 <body>
   <div class="container">
-  
     <div class="table-container">
-      <table>
+     <table>
         <thead>
-          <tr>
-            <th >
-              <div class="button-container">
-      <button class="oval-button">Button 1</button>
-      
+          <tr  >
+            <div class="button-style">
+            <th id="button-column" style="background-color:white;border:none;" >
+                 <div class="oval-container">
+      <div class="oval-button active">Button 1</div>
+      <div class="oval-button">Button 2</div>
     </div>
-            </th>
-            <th>Column 2</th>
-            <th>Column 2</th>
-            <th>Column 2</th>
-            <th>Column 2</th>
+ 
+  <script>
+    const ovalButtons = document.querySelectorAll('.oval-button');
+
+    ovalButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        ovalButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+      });
+    });
+  </script>
+            </th >
+            <th   id="mobile-column" >Mobile</th>
+            <th>Basic</th>
+            <th>Standard</th>
+            <th>Premium</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Data 1,1</td>
-            <td>Data 1,2</td>
-            <td>Data 1,1</td>
-            <td>Data 1,2</td>
-            <td>Data 1,1</td>
+          <tr class='row'>
+            <td class="features">Monthly price</td>
+            <td class="mobile-row">Rs 100</td>
+            <td>Rs 200</td>
+            <td>Rs 500</td>
+            <td>Rs 700</td>
             
           </tr>
           <!-- Repeat rows as needed -->
+          <tr class='row'>
+            <td class="features">Video Quality</td>
+            <td class="mobile-row">Good</td>
+            <td>Good</td>
+            <td>Better</td>
+            <td>Best</td>
+            
+          </tr>
+          <tr class='row'>
+            <td class="features">Resolution</td>
+            <td class="mobile-row">480p</td>
+            <td>480p</td>
+            <td>1080p</td>
+            <td>4K+HDR</td>
+            
+          </tr>
+          <tr class='row'>
+            <td class="features">Device you can use to watch</td>
+            <td class="mobile-row">Phone</td>
+            <td>Phone</td>
+            <td>Phone</td>
+            <td>Phone</td>
+            
+          </tr>
+          <tr class='row' id="border-exception">
+            <td id="border-exception"></td>
+            <td class="mobile-row" id="border-exception">Tablet</td>
+            <td id="border-exception">Tablet</td>
+            <td id="border-exception">Tablet</td>
+            <td id="border-exception">Tablet</td>
+            
+          </tr>
+          <tr class='row'>
+            <td id="border-exception"></td>
+            <td class="mobile-row" id="border-exception"></td>
+            <td id="border-exception">Computer</td>
+            <td id="border-exception">Computer</td>
+            <td id="border-exception">Computer</td>
+            
+          </tr>
+          <tr class='row'>
+            <td id="border-exception"></td>
+            <td class="mobile-row" id="border-exception"></td>
+            <td id="border-exception">Tv</td>
+            <td id="border-exception">Tv</td>
+            <td id="border-exception">Tv</td>
+          </tr>
         </tbody>
       </table>
+      <div class="table-footer">
+    <button class="long-button">Next</button>
+  </div>
     </div>
   </div>
+  
 </body>
 </html>
