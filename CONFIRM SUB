@@ -35,6 +35,7 @@
   .box-section:last-child {
     margin-right: 0; /* Remove spacing from last section */
     background-color: #f5f5f5;
+    border-radius:5px;
   }
 
   .box-section h2 {
@@ -110,7 +111,7 @@
       <p>Write your credit or debit card number below:</p>
      
       <div class="input-group">
-           <input type="text" placeholder="Card Number" id="email"required>
+           <input type="text" placeholder="Card Number                                                            MM/YY/ CVC" id="email"required>
         </div>
       <div class="button-container">
         <button class="confirm-button">Confirm Password</button>
