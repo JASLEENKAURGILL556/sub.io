@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .white-box {
+    background-color: white;
+    
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row; /* Display side by side */
+    width: 80%;
+    max-width: 900px; /* Adjust as needed */
+  }
+
+  .box-section {
+    flex: 1;
+    margin-right: 20px; /* Add some spacing between sections */
+    padding:20px;
+    
+  }
+
+  .box-section:last-child {
+    margin-right: 0; /* Remove spacing from last section */
+    background-color: #f5f5f5;
+  }
+
+  .box-section h2 {
+    margin-top: 0;
+    
+  }
+
+  .box-section p {
+    margin-bottom: 10px;
+    
+  }
+
+  .order-summary {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+
+  .button-container {
+    
+    flex-direction: column;
+    align-items:left;
+    margin-top: 10px;
+  }
+
+  .confirm-button {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    
+  }
+
+  .confirm-button:hover {
+    background-color: #0049a3;
+  }
+  td{
+    text-align:right;
+  }
+  .input-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .input-group input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+</style>
+<title>Page 1</title>
+</head>
+<body>
+  <div class="white-box">
+    <div class="box-section">
+      <h2>Complete Password</h2>
+      <p>Write your credit or debit card number below:</p>
+     
+      <div class="input-group">
+           <input type="text" placeholder="Card Number" id="email"required>
+        </div>
+      <div class="button-container">
+        <button class="confirm-button">Confirm Password</button>
+      </div>
+    </div>
+    <div class="box-section">
+      <h2>Order Summary</h2>
+      <div class="order-summary">
+        <table>
+          <tr>
+            <th>Plan Name</th>
+            <td>Basic</td>
+          </tr>
+          <tr>
+            <th>Billing Cycle</th>
+            <td>Monthly</td>
+          </tr>
+          <tr>
+            <th>Plan price</th>
+            <td>rs2000/mo</td>
+          </tr>
+          <!-- Add more rows for other plan details -->
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
