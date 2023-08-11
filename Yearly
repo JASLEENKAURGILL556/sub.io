@@ -160,39 +160,40 @@
             <div class="button-style">
             <th id="button-column" style="background-color:white;border:none;" >
                  <div class="oval-container">
-      <div class="oval-button active" id="button1">Monthly</div>
-      <div class="oval-button" id="button2">Yearly</div>
+      <div class="oval-button active" id="button1" >Monthly</div>
+      <div class="oval-button" id="button2" >Yearly</div>
     </div>
  
   <script>
-
+  
     const button1 = document.getElementById("button1");
     const button2 = document.getElementById("button2");
     const longbutton=document.getElementById("long-button");
     button1.addEventListener("click", function() {
-      window.location.href = "page1.html"; // Replace with the URL of your Page 1
+      window.location.href = "monthlysub.html"; // Replace with the URL of your Page 1
       button2.classList.add('active');
         button1.classList.remove('active');
 
     });
 
     button2.addEventListener("click", function() {
-      window.location.href = "page2.html"; // Replace with the URL of your Page 2
+      window.location.href = "yearlysub.html"; // Replace with the URL of your Page 2
+
       button2.classList.add('active');
         button1.classList.remove('active');
     });
 
     longbutton.addEventListener("click", function() {
-      window.location.href = "#"; // Replace with the URL of your Page next
+      window.location.href = "confirmsub.html"; // Replace with the URL of your Page next
 
 
     });
   </script>
             </th >
-            <th   id="mobile-column" >Mobile</th>
-            <th>Basic</th>
-            <th>Standard</th>
-            <th>Premium</th>
+            <th onclick="assignValue('Mobile')">Mobile</th>
+            <th onclick="assignValue('Basic')">Basic</th>
+            <th onclick="assignValue('Standard')">Standard</th>
+            <th onclick="assignValue('Premium')">Premium</th>
           </tr>
         </thead>
         <tbody>
