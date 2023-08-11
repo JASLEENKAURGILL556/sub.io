@@ -94,11 +94,11 @@
 <body>
   <div class="white-box">
     <div class="plan-details">
-      <div class="cancel-button">Cancel</div>
+      <div class="cancel-button"><a href="C:\Users\admin\Desktop\poc\cancel.html">Cancel</a></div>
       <h2 style="color:black;font-size:30px;">Current Plan Details  <button class="small-button active">Active</button> </h2>
-      <p>Basic</p>
+      <p>Mobile</p>
       <p>Phone + Tablet</p>
-      <p style="font-size:28px;color:black; font-weight:bold;">Rs 2000/yr</p>
+      <p style="font-size:28px;color:black; font-weight:bold;">Rs 200/Mon</p>
       <button class="small-button-changeplan">Change Plan</button>
     </div>
     <div class="subscription-info">
@@ -113,6 +113,13 @@
 
     const startDateElement = document.getElementById("start-date");
     startDateElement.textContent = startDate.toDateString();
+
+    const nextButtons = document.getElementsByClassName("small-button-changeplan");
+    for (const button of nextButtons) {
+      button.addEventListener("click", function() {
+        window.location.href = "monthlysub.html"; // Replace with the URL of your next page
+      });
+    }
   </script>
 </body>
 </html>
