@@ -77,6 +77,12 @@
     text-decoration: underline;
   }
 </style>
+<script type="text/javascript">
+  const signupButton = document.querySelector(".signup-button");
+    signupButton.addEventListener("click", function() {
+      window.location.href = "C:/Users/admin/Desktop/poc/monthlysub.html"; // Replace with the relative URL of your "monthly.html" page
+    });
+</script>
 <title>Signup Form</title>
 </head>
 <body>
@@ -100,10 +106,10 @@
           <input type="checkbox" id="remember" name="remember">
           <label for="remember">Remember me</label>
         </div>
-        <button class="signup-button">Sign Up</button>
+      <button class="signup-button" onclick="window.location.href = 'C:/Users/admin/Desktop/poc/login.html'; ">Sign Up</button>
       </form>
       <div class="login-text">
-        Already have an account? <a class="login-link" href="#">Log in</a>
+        Already have an account? <a class="login-link" href="login.html">Log in</a>
       </div>
     </div>
   </div>
