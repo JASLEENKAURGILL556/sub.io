@@ -77,15 +77,16 @@
     background-color: #588BAE;
     color:white;
   }
+  
+  th:active{
+     background-color:#0F52BA;
 
+  }
   th:not(:first-child),
   td:not(:first-child) {
     border-left: 20px solid white;
   }
-  #mobile-column{
-    background-color:#0F52BA;
-   
-  }
+  
   #border-exception{
     border:none;
 }
@@ -144,8 +145,14 @@
     background-color: white;
     color: #0F52BA;
   }
- 
+ .long-button:hover{
+  background-color: white;
+  color: blue;
+  border: 2px solid blue;
+ }
 </style>
+
+
 <title>Button and Table</title>
 </head>
 <body>
@@ -167,14 +174,14 @@
     const button2 = document.getElementById("button2");
     const longbutton=document.getElementById("long-button");
     button1.addEventListener("click", function() {
-      window.location.href = "page1.html"; // Replace with the URL of your Page 1
+      window.location.href = "monthlysub.html"; // Replace with the URL of your Page 1
       button2.classList.add('active');
         button1.classList.remove('active');
 
     });
 
     button2.addEventListener("click", function() {
-      window.location.href = "page2.html"; // Replace with the URL of your Page 2
+      window.location.href = "yearlysub.html"; // Replace with the URL of your Page 2
       button2.classList.add('active');
         button1.classList.remove('active');
     });
@@ -186,10 +193,10 @@
     });
   </script>
             </th >
-            <th   id="mobile-column" >Mobile</th>
-            <th>Basic</th>
-            <th>Standard</th>
-            <th>Premium</th>
+            <th onclick="assignValue('Moblie')" >Mobile</th>
+            <th onclick="assignValue('Basic')">Basic</th>
+            <th onclick="assignValue('Standard')">Standard</th>
+            <th onclick="assignValue('Premium')">Premium</th>
           </tr>
         </thead>
         <tbody>
@@ -252,7 +259,7 @@
         </tbody>
       </table>
       <div class="table-footer">
-    <button class="long-button">Next</button>
+    <button class="long-button"  onclick="window.location.href = 'C:/Users/admin/Desktop/poc/confirmsub.html'; ">Next</button>
   </div>
     </div>
   </div>
